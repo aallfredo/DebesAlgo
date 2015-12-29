@@ -13,13 +13,9 @@ namespace debesalgo.Controllers
         // GET: ClosedBusiness
         public ActionResult Index()
         {
-            /*                                   
-            El Obrero
+            /*                                
             Jose Enrique
-            Cafe Puerto Rico
-            Empresas Sultanas
-            Bambi
-            La Patisserie de France
+            Empresas Sultanas                        
             Flora by Arquetipo
             Party Line
             PR Exhibit Manufacturing
