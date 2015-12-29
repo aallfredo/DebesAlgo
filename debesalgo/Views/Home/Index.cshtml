@@ -9,19 +9,37 @@
 </div>
 
 <div class="row">
-    <div class="col-md-9" style="text-align:center">       
-        <ul data-bind="foreach: List" style="list-style-type: none;">
+    <div class="col-md-9">       
+		<ul id="business-list" data-bind="foreach: List" class="list-unstyled">
             <li>
-                <h4><span data-bind="text: Name"></span></h4> 
-                <br />
-                <img data-bind="attr:{src:Img}"  style="width: 60%;" />
-                <br/>
-                D&iacute;a embargado: <span data-bind="text: DateClosed"></span><br />
-                <div data-bind="visible: Details() !=''" >Detalles: <span data-bind="text: Details"></span><br /></div>
-                Dirección: <span data-bind="text: Address"></span><br />
-                <a data-bind="attr:{href:ArticleLink}">Enlace al art&iacute;culo</a>
-                <br/>
-                <br />
+				<div class="media">
+					<div class="media-left">
+					  <img data-bind="attr:{src:Img}"/>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">
+					  		<span data-bind="text: Name"></span>
+				  		</h4>
+					  	<div class="direccion">
+					  		<address>
+					  		<span class="glyphicon glyphicon-marker" aria-hidden="true"></span> 
+                			<strong>Dirección: </strong> <span data-bind="text: Address"></span>
+                			</address>
+            			</div>
+				  		<div class="dia-embargo">
+					  		<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 
+					  		<strong>D&iacute;a embargado: </strong><span data-bind="text: DateClosed"></span>
+					  	</div>
+            			<div data-bind="visible: Details() !=''" >
+            				<span class="glyphicon glyphicon-book" aria-hidden="true"></span> 
+            				<strong>Detalles: </strong><span data-bind="text: Details"></span>
+        				</div>
+        				<div class="enlace">
+        					<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> 
+                			<a data-bind="attr:{href:ArticleLink}" target="_blank">Enlace al art&iacute;culo</a>
+            			</div>
+					</div>
+				</div>
             </li>
         </ul>
     </div>
