@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Lista";
+}
+
+<div class="jumbotron" style="text-align:center">
+    <img src="~/Content/logo.png" style="width: 60%;"/>
+   
+    <p class="lead" style="margin-top: 15px;">Lista no oficial de comercios embargados por hacienda(PR). </p>   
+</div>
+
+<div class="row">
+    <div class="col-md-9" style="text-align:center">       
+        <ul data-bind="foreach: List" style="list-style-type: none;">
+            <li>
+                <h4><span data-bind="text: Name"></span></h4> 
+                <br />
+                <img data-bind="attr:{src:Img}"  style="width: 60%;" />
+                <br/>
+                Dia embargado:<span data-bind="text: DateClosed"></span><br />
+                <div data-bind="visible: Details() !=''" >Detalles:<span data-bind="text: Details"></span><br /></div>
+                Dirección:<span data-bind="text: Address"></span><br />
+                <a data-bind="attr:{href:ArticleLink}">Enlace al articulo</a>
+                <br/>
+                <br />
+            </li>
+        </ul>     
+    </div>
+    
+</div>
+@section scripts{
+<script src="~/Scripts/Models/ClosedBusiness.js"></script>
+    }
