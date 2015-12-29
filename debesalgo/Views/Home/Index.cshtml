@@ -5,7 +5,7 @@
 <div class="jumbotron" style="text-align:center">
     <img src="~/Content/logo.png" style="width: 60%;"/>
    
-    <p class="lead" style="margin-top: 15px;">Lista no oficial de comercios embargados por hacienda(PR). </p>   
+    <p class="lead" style="margin-top: 15px;">Lista no oficial de comercios embargados por el <a href="http://www.hacienda.gobierno.pr/">Departamento de Hacienda</a> en Puerto Rico. </p>   
 </div>
 
 <div class="row">
@@ -16,14 +16,14 @@
                 <br />
                 <img data-bind="attr:{src:Img}"  style="width: 60%;" />
                 <br/>
-                Dia embargado:<span data-bind="text: DateClosed"></span><br />
-                <div data-bind="visible: Details() !=''" >Detalles:<span data-bind="text: Details"></span><br /></div>
-                Dirección:<span data-bind="text: Address"></span><br />
-                <a data-bind="attr:{href:ArticleLink}">Enlace al articulo</a>
+                D&iacute;a embargado: <span data-bind="text: DateClosed"></span><br />
+                <div data-bind="visible: Details() !=''" >Detalles: <span data-bind="text: Details"></span><br /></div>
+                Dirección: <span data-bind="text: Address"></span><br />
+                <a data-bind="attr:{href:ArticleLink}">Enlace al art&iacute;culo</a>
                 <br/>
                 <br />
             </li>
-        </ul>     
+        </ul>
     </div>
     
 </div>
