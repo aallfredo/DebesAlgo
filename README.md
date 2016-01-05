@@ -19,7 +19,7 @@ DebesAlgo cuenta con los siguientes *features*:
 ¿Te interesa contribuir? ¡Perfecto! Esto es lo que debes saber.
 
 ### Tecnología
-Este repositorio utiliza ASP/.Net MVC5 y el *framework* [KnockoutJS](http://knockoutjs.com/). Puedes utilizar la edición [Visual Studio Community 2015](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx). 
+Este repositorio utiliza ASP/.Net MVC5 y el *framework* [KnockoutJS](http://knockoutjs.com/). Puedes utilizar la edición [Visual Studio Community 2015](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx). Instala [Azure SDK](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409) para la base de datos.
 
 ### Instrucciones para contribuir código
 1. Hacer un *fork* al repositorio.
