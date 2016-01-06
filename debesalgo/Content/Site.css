@@ -22,3 +22,29 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* lista de comercios */
+
+.card{
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: .25em;
+    overflow: hidden;
+
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.09);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.09);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.09);
+}
+.business-image {
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.business-image img {
+    width: 100%;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
