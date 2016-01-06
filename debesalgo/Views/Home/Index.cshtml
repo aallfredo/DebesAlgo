@@ -9,21 +9,62 @@
 </div>
 
 <div class="row">
-    <div class="col-md-9" style="text-align:center">       
-        <ul data-bind="foreach: List" style="list-style-type: none;">
+
+    <div class="col-md-6 col-md-push-3">       
+		<ul id="business-list" data-bind="foreach: List" class="list-unstyled">
             <li>
-                <h4><span data-bind="text: Name"></span></h4> 
-                <br />
-                <img data-bind="attr:{src:Img}"  style="width: 60%;" />
-                <br/>
-                D&iacute;a embargado: <span data-bind="text: DateClosed"></span><br />
-                <div data-bind="visible: Details() !=''" >Detalles: <span data-bind="text: Details"></span><br /></div>
-                Dirección: <span data-bind="text: Address"></span><br />
-                <a data-bind="attr:{href:ArticleLink}">Enlace al art&iacute;culo</a>
-                <br/>
-                <br />
+                <div class="card ">
+                    <div class="row" data-bind="visible: Img() !=null">
+                        <div class="col-md-12 business-image">
+                            <img class="business-image" data-bind="attr:{src:Img}" />
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>
+                                    <span data-bind="text: Name"></span>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <strong>Dirección: </strong>
+                                <span data-bind="text: Address"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 dia-embargo">
+                                <span class="glyphicon glyphicon-calendar " aria-hidden="true"></span> <strong>D&iacute;a embargado: </strong>
+                                <span data-bind="text: DateClosed"></span>
+                            </div>
+                        </div>
+                        <div data-bind="visible: Details() !=''" class="row">
+                            <div class="col-md-12">
+                                <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+                                <strong>Detalles: </strong><span data-bind="text: Details"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 enlace">
+                                <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+                                <a data-bind="attr:{href:ArticleLink}" target="_blank">Enlace al art&iacute;culo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </li>
         </ul>
+
+
+
+
+    </div>
+    <div class="col-md-3 sidebar-first col-md-pull-6">
+
+    </div>
+    <div class="col-md-3 sidebar-second">
+       
     </div>
     
 </div>
