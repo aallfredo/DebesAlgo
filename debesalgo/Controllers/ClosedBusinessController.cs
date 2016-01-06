@@ -12,8 +12,11 @@ namespace debesalgo.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: ClosedBusiness
         public ActionResult Index()
-        {                 
-            return Json(db.ClosedBusinesses.ToList(), JsonRequestBehavior.AllowGet);
+        {
+            var listOfItems = db.ClosedBusinesses.ToList();
+            listOfItems.
+
+            return Json(, JsonRequestBehavior.AllowGet);
         }        
     }
 }
