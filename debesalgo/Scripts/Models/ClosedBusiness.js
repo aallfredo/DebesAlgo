@@ -5,6 +5,9 @@ $.get("/ClosedBusiness", function (data) {
     {
         var self = this;
         self.Data = ko.mapping.fromJS(data);
+        self.InvokeTag = function (place) {
+            $.get("/ClosedBusiness", function (data) {
+        }
     }   
     ko.applyBindings(new ClosedBusinessListModel);
 });
