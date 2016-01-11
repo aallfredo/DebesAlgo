@@ -14,7 +14,7 @@ namespace debesalgo.Controllers
      public class ClosedBusinessesAdminController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
+      
         // GET: ClosedBusinessesAdmin
         public ActionResult Index()
         {
@@ -53,10 +53,70 @@ namespace debesalgo.Controllers
             {
                 db.ClosedBusinesses.Add(closedBusiness);
                 db.SaveChanges();
+                List <Tag> lt = GenerateTownTags(closedBusiness);
+                foreach (var t in lt)
+                {
+                    db.Tags.Add(t);
+                }
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             return View(closedBusiness);
+        }
+
+
+
+        [HttpGet]
+        // GET: ClosedBusinessesAdmin/OneTimeTagging
+        public ActionResult OneTimeTagging()
+        {
+            var fadmin = db.KeyValueSettings.FirstOrDefault(s => s.Key == "PreviousDataRanForTags");
+            if (fadmin == null || fadmin.Value == "false")
+            {
+                var bs = db.ClosedBusinesses.ToList();
+                foreach (var closedBusiness in bs)
+                {
+                    List<Tag> lt = GenerateTownTags(closedBusiness);
+                    foreach (var t in lt)
+                    {
+                        db.Tags.Add(t);
+                    }
+                    
+                }
+                if (fadmin == null)
+                {
+                    db.KeyValueSettings.Add(new KeyValueSettings() { Key = "PreviousDataRanForTags", Value = "true" });
+                }
+                else
+                {
+                    fadmin.Value = "true";
+                }
+                db.SaveChanges();
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+            return Json(false, JsonRequestBehavior.AllowGet);
+        }
+
+        private List<Tag> GenerateTownTags( ClosedBusiness closedBusiness)
+        {
+            List<Tag> returnable = new List<Tag>();
+            var normalized = closedBusiness.Address.ToLowerInvariant();
+            int count = 0;
+            foreach (var name in Towns.NamesNormalized)
+            {
+                if (normalized.Contains(name))
+                {
+                    returnable.Add(new Tag
+                    {
+                        Name = Towns.Names[count],
+                        TaggedBusiness = closedBusiness,
+                        Type = "Town"
+                    });
+                }
+                count++;
+            }
+            return returnable;
         }
 
         // GET: ClosedBusinessesAdmin/Edit/5

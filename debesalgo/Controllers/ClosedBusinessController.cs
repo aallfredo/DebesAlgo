@@ -13,10 +13,9 @@ namespace debesalgo.Controllers
         // GET: ClosedBusiness
         public ActionResult Index()
         {
-            var listOfItems = db.ClosedBusinesses.ToList();
-            listOfItems.
+            var listOfItems = db.ClosedBusinesses.ToList();            
 
-            return Json(, JsonRequestBehavior.AllowGet);
+            return Json(listOfItems, JsonRequestBehavior.AllowGet);
         }        
     }
 }

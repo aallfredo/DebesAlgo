@@ -32,5 +32,7 @@ namespace debesalgo.Models
 
         public System.Data.Entity.DbSet<debesalgo.Models.ClosedBusiness> ClosedBusinesses { get; set; }
         public System.Data.Entity.DbSet<debesalgo.Models.KeyValueSettings> KeyValueSettings { get; set; }
+
+        public System.Data.Entity.DbSet<debesalgo.Models.Tag> Tags { get; set; }
     }
 }

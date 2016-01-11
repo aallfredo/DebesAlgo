@@ -7,9 +7,9 @@ namespace debesalgo.Models
 {
     public class Towns
     {
-        public List<string> Names { set; get; }
-
-        public Towns()
+        public static List<string>  Names { set; get; }
+        public static List<string> NamesNormalized { set; get; }
+        static Towns()
         {
             Names = new List<string>()
             {
@@ -92,6 +92,8 @@ namespace debesalgo.Models
                 "Yabucoa",
                 "Yauco"
             };
+
+            NamesNormalized = Names.Select(s => s.ToLowerInvariant()).ToList();
         }
     }
 }
