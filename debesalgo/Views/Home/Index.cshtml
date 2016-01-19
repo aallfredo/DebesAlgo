@@ -7,14 +7,10 @@
 
     <p class="lead" style="margin-top: 15px;">Lista no oficial de comercios embargados por el <a href="http://www.hacienda.gobierno.pr/">Departamento de Hacienda</a> en Puerto Rico. </p>
 </div>
-
 <div class="row">
-
-    
-
-    <div class="col-md-6 col-md-push-3" style="margin-bottom:5px;text-align:left">
-        <div id="custom-search-input">
-            <div class="input-group col-md-6">
+    <div class="col-md-6 col-md-push-5">
+        <div id="custom-search-input pull-right">
+            <div class="input-group col-md-6 pull-right text-right" style="width: 300px;">
                 <input type="text" class=" search-query form-control" placeholder="Search" data-bind="textInput:SearchBox" />
                 <span class="input-group-btn">
                     <button class="btn btn-info" type="button" data-bind="click:InvokeSearch">
@@ -23,6 +19,11 @@
                 </span>
             </div>
         </div>
+    </div>
+</div>
+<div class="row">  
+    <div class="col-md-6 col-md-push-3" style="margin-bottom:5px;text-align:center">
+     
         <ul data-bind="foreach: Data.TownTags" style="list-style-type: none; display:inline;">
             <li style="list-style-type: none; display:inline"><a href="#" data-bind="text:$data, click:$root.InvokeTag "></a></li>
         </ul>
