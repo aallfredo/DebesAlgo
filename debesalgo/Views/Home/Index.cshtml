@@ -15,8 +15,8 @@
             <li>
                 <div class="card ">
                     <div class="row" data-bind="visible: Img() !=null">
-                        <div class="col-md-12 business-image">
-                            <img class="business-image" data-bind="attr:{src:Img}" />
+                        <div class="col-md-12 business-image"  data-bind="style: { backgroundImage: 'url(\'' + Img() + '\')' }">
+                            
                         </div>
                     </div>
                     <div class="card-body">
