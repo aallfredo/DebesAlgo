@@ -17,31 +17,29 @@ namespace debesalgo.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: ClosedBusiness    
-        public ActionResult Index(string tag = null)
+        public ActionResult Index(string tag = null, string search =null)
         {
-            if (tag == null)
+            var allTags = db.Tags.Where(s => s.Type == "Town");
+            var tags = allTags.Select(s => s.Name).Distinct().ToList();
+            List<ClosedBusiness> listOfItems;
+            if (!string.IsNullOrWhiteSpace(search))
             {
-                var listOfItems = db.ClosedBusinesses.ToList();
-                var tags = db.Tags.Where(s => s.Type == "Town").Select(s => s.Name).Distinct().ToList();
-                var response = new ClosedBusinessResponse
-                {
-                    Businesses = listOfItems,
-                    TownTags = tags
-                };
-                return Json(response, JsonRequestBehavior.AllowGet);
+                listOfItems = db.ClosedBusinesses.Where(s => s.Details.ToLower().Contains(search.ToLower()) || s.Name.ToLower().Contains(search.ToLower())|| s.Address.ToLower().Contains(search.ToLower())).ToList();
+            }
+            else if (tag == null)
+            {
+                listOfItems = db.ClosedBusinesses.ToList();                                            
             }
             else
-            {
-                var allTags = db.Tags.Where(s => s.Type == "Town");
-                var tags = allTags.Select(s => s.Name).Distinct().ToList();
-                var listOfItems = allTags.Where(s => s.Name == tag).Select(s => s.TaggedBusiness).ToList();
-                var response = new ClosedBusinessResponse
-                {
-                    Businesses = listOfItems,
-                    TownTags = tags
-                };
-                return Json(response, JsonRequestBehavior.AllowGet);
+            {                
+                listOfItems = allTags.Where(s => s.Name == tag).Select(s => s.TaggedBusiness).ToList();              
             }
+            var response = new ClosedBusinessResponse
+            {
+                Businesses = listOfItems,
+                TownTags = tags
+            };
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
     }
 }

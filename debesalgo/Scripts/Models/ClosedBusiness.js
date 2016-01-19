@@ -5,13 +5,17 @@ $.get("/ClosedBusiness", function (data) {
     {
         var self = this;
         self.Data = ko.mapping.fromJS(data);
-        self.InvokeTag = function (place) {
-            alert(place);
-            $.get("/ClosedBusiness?tag="+place, function (data) {
-                alert("Check");
+        self.InvokeTag = function (place) {            
+            $.get("/ClosedBusiness?tag="+place, function (data) {                
                 ko.mapping.fromJS(data, self.Data);
             });
-            };
+        };
+        self.SearchBox = ko.observable('');
+        self.InvokeSearch = function () {
+            $.get("/ClosedBusiness?search=" + self.SearchBox(), function (data) {
+                ko.mapping.fromJS(data, self.Data);
+            });
+        };
     }   
     ko.applyBindings(new ClosedBusinessListModel);
 });

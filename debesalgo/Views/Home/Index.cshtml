@@ -10,8 +10,20 @@
 
 <div class="row">
 
-    <div class="col-md-6 col-md-push-3" style="margin-bottom:5px;text-align:center">
-        <ul id="business-list" data-bind="foreach: Data.TownTags" style="list-style-type: none; display:inline;">
+    
+
+    <div class="col-md-6 col-md-push-3" style="margin-bottom:5px;text-align:left">
+        <div id="custom-search-input">
+            <div class="input-group col-md-6">
+                <input type="text" class=" search-query form-control" placeholder="Search" data-bind="textInput:SearchBox" />
+                <span class="input-group-btn">
+                    <button class="btn btn-info" type="button" data-bind="click:InvokeSearch">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+        </div>
+        <ul data-bind="foreach: Data.TownTags" style="list-style-type: none; display:inline;">
             <li style="list-style-type: none; display:inline"><a href="#" data-bind="text:$data, click:$root.InvokeTag "></a></li>
         </ul>
     </div>
@@ -20,6 +32,10 @@
 <div class="row">
 
     <div class="col-md-6 col-md-push-3">
+
+       
+
+
         <ul id="business-list" data-bind="foreach: Data.Businesses,visible: Data.Businesses().length > 0" class="list-unstyled" style="display:none">
             <li>
                 <div class="card ">
