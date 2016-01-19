@@ -16,17 +16,32 @@ namespace debesalgo.Controllers
     public class ClosedBusinessController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        // GET: ClosedBusiness
-        public ActionResult Index()
+        // GET: ClosedBusiness    
+        public ActionResult Index(string tag = null)
         {
-            var listOfItems = db.ClosedBusinesses.ToList();
-            var tags = db.Tags.Where(s=>s.Type == "Town").Select(s=>s.Name).Distinct().ToList();
-            var response = new ClosedBusinessResponse
+            if (tag == null)
             {
-                Businesses = listOfItems,
-                TownTags = tags
-            };
-            return Json(response, JsonRequestBehavior.AllowGet);
-        }        
+                var listOfItems = db.ClosedBusinesses.ToList();
+                var tags = db.Tags.Where(s => s.Type == "Town").Select(s => s.Name).Distinct().ToList();
+                var response = new ClosedBusinessResponse
+                {
+                    Businesses = listOfItems,
+                    TownTags = tags
+                };
+                return Json(response, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                var allTags = db.Tags.Where(s => s.Type == "Town");
+                var tags = allTags.Select(s => s.Name).Distinct().ToList();
+                var listOfItems = allTags.Where(s => s.Name == tag).Select(s => s.TaggedBusiness).ToList();
+                var response = new ClosedBusinessResponse
+                {
+                    Businesses = listOfItems,
+                    TownTags = tags
+                };
+                return Json(response, JsonRequestBehavior.AllowGet);
+            }
+        }
     }
 }
