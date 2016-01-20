@@ -5,7 +5,7 @@
 <div class="jumbotron" style="text-align:center">
     <img src="~/Content/logo.png" style="width: 60%;"/>
    
-    <p class="lead" style="margin-top: 15px;">Lista no oficial de comercios embargados por el <a href="http://www.hacienda.gobierno.pr/">Departamento de Hacienda</a> en Puerto Rico. </p>   
+    <p class="lead" style="margin-top: 15px;">Lista no oficial de comercios embargados por el <a href="http://www.hacienda.gobierno.pr/" target="_blank">Departamento de Hacienda</a> en Puerto Rico. </p>   
 </div>
 
 <div class="row">
@@ -39,7 +39,7 @@
                                 <span data-bind="text: DateClosed"></span>
                             </div>
                         </div>
-                        <div data-bind="visible: Details() !=''" class="row">
+                        <div data-bind="visible: Details() !=null" class="row">
                             <div class="col-md-12">
                                 <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
                                 <strong>Detalles: </strong><span data-bind="text: Details"></span>

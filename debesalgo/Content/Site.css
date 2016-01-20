@@ -49,3 +49,14 @@ textarea {
 .card-body {
     padding: 1.25rem;
 }
+
+/* CLOSED BUSINESS ADMIN */
+.business address {
+    margin-bottom: 0;
+}
+.closed-business-admin .heading {
+    font-weight: bold;
+}
+.closed-business-admin .business {
+    margin-bottom:1em;
+}
