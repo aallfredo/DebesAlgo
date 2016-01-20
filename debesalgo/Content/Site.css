@@ -49,3 +49,15 @@ textarea {
 .card-body {
     padding: 1.25rem;
 }
+
+/* CLOSED BUSINESS ADMIN */
+/* responsive tables 
+    this code is needed according to http://getbootstrap.com/css/#tables
+*/
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
+
+.closed-business-admin .establishment-img-preview {
+    max-width:100px;
+}
