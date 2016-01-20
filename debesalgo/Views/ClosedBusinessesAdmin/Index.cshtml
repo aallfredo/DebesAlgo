@@ -67,8 +67,10 @@
                                     </li>
                                 </ul>
                             </div>
-                            <a href="@Html.DisplayFor(modelItem => item.Img)" target="_blank" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-picture"></span> Picture</a>
-                            <a href="@Html.DisplayFor(modelItem => item.ArticleLink)" target="_blank" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> Article</a>
+                          
+                            <a href="@Html.DisplayFor(modelItem => item.Img)" target="_blank" class="btn btn-sm btn-default @if (item.Img == null || item.Img == " ") {<text>disabled</text>}">
+                                <span class="glyphicon glyphicon-picture"></span> Picture</a>
+                            <a href="@Html.DisplayFor(modelItem => item.ArticleLink)" target="_blank" class="btn btn-sm btn-default  @if (item.ArticleLink == null || item.Img == " ") {<text>disabled</text>}"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> Article</a>
                         </div>
                     </div>
                     <div class="clearfix"></div>
