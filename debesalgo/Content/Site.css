@@ -37,8 +37,9 @@ textarea {
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.09);
 }
 .business-image {
-    max-height: 200px;
-    overflow: hidden;
+    height:200px;
+    background-position: center;
+    background-size: cover;
 }
 
 .business-image img {
@@ -47,4 +48,15 @@ textarea {
 
 .card-body {
     padding: 1.25rem;
+}
+
+/* CLOSED BUSINESS ADMIN */
+.business address {
+    margin-bottom: 0;
+}
+.closed-business-admin .heading {
+    font-weight: bold;
+}
+.closed-business-admin .business {
+    margin-bottom:1em;
 }
