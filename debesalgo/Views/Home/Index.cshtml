@@ -4,23 +4,23 @@
 
 <div class="jumbotron" style="text-align:center">
     <img src="~/Content/logo.png" style="width: 60%;" />
-
-    <p class="lead" style="margin-top: 15px;">Lista no oficial de comercios embargados por el <a href="http://www.hacienda.gobierno.pr/">Departamento de Hacienda</a> en Puerto Rico. </p>
+   
+    <p class="lead" style="margin-top: 15px;">Lista no oficial de comercios embargados por el <a href="http://www.hacienda.gobierno.pr/" target="_blank">Departamento de Hacienda</a> en Puerto Rico. </p>   
 </div>
 
 
 
 
-<div class="row">  
+<div class="row">
     <div class="col-md-6 col-md-push-3" style="margin-bottom:5px;text-align:center">
-     
+
        
     </div>
 </div>
 
 <div class="row">
 
-    <div class="col-md-6 col-md-push-3">
+    <div class="col-md-6 col-md-push-3">       
 
        
 
@@ -29,8 +29,8 @@
             <li>
                 <div class="card ">
                     <div class="row" data-bind="visible: Img() !=null">
-                        <div class="col-md-12 business-image">
-                            <img class="business-image" data-bind="attr:{src:Img}" />
+                        <div class="col-md-12 business-image"  data-bind="style: { backgroundImage: 'url(\'' + Img() + '\')' }">
+                            
                         </div>
                     </div>
                     <div class="card-body">
@@ -53,7 +53,7 @@
                                 <span data-bind="text: DateClosed"></span>
                             </div>
                         </div>
-                        <div data-bind="visible: Details() !=''" class="row">
+                        <div data-bind="visible: Details() !=null" class="row">
                             <div class="col-md-12">
                                 <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
                                 <strong>Detalles: </strong><span data-bind="text: Details"></span>
@@ -96,8 +96,8 @@
             </div>
         </div>
     </div>
-
+    
 </div>
 @section scripts{
-    <script src="~/Scripts/Models/ClosedBusiness.js"></script>
-}
+<script src="~/Scripts/Models/ClosedBusiness.js"></script>
+    }

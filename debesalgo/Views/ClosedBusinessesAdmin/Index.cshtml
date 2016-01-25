@@ -5,66 +5,78 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Closed Businesses</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a class="btn btn-default btn-sm" href="/ClosedBusinessesAdmin/Create"><span class="glyphicon glyphicon-plus-sign"></span> Add New</a>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateClosed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CurrentStatus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ArticleLink)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Img)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Details)
-        </th>
-        <th></th>
-    </tr>
+<div class="closed-business-admin">
+        <div class="row heading hidden-xs hidden-sm">
+            <div class="col-md-4">
+                Name
+            </div>
+            <div class="col-md-5">
+                Details
+            </div>
+            <div class="col-md-3">
+                Actions
+            </div>
+        </div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateClosed)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CurrentStatus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArticleLink)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Img)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Details)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+        @foreach (var item in Model) {
+            <div class="row">
+                <div class="business">
+
+                    <div class="col-md-4">
+                        <a class="heading" href="/ClosedBusinessesAdmin/Details/@Html.DisplayFor(modelItem => item.Id)">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </a>
+                        <div>
+                            <span title="Fecha de embargo"><span class="glyphicon glyphicon-calendar"></span> @Html.DisplayFor(modelItem => item.DateClosed)</span> <span class="status" title="Status"><span class="glyphicon glyphicon-dashboard"></span> @Html.DisplayFor(modelItem => item.CurrentStatus)</span>
+                        </div>
+                        <address>
+                            <span class="glyphicon glyphicon-map-marker"></span> @Html.DisplayFor(modelItem => item.Address)
+                        </address>
+
+                    </div>
+
+                    <div class="col-md-5">
+                        <span class="hidden-lg hidden-md heading">Details: </span> @Html.DisplayFor(modelItem => item.Details)
+                    </div>
+                    <div class="col-md-3">
+                        <div class="btn-group btn-group-justified" role="group">
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Menu <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a title="View item" class="" href="/ClosedBusinessesAdmin/Details/@Html.DisplayFor(modelItem => item.Id)">
+                                            <span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span> Details
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a title="Edit item" class="" href="/ClosedBusinessesAdmin/Edit/@Html.DisplayFor(modelItem => item.Id)">
+                                            <span class='glyphicon glyphicon-pencil' aria-hidden='true'></span> Edit
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a title="Delete item" class="" href="/ClosedBusinessesAdmin/Delete/@Html.DisplayFor(modelItem => item.Id)">
+                                            <span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span> Delete
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                          
+                            <a href="@Html.DisplayFor(modelItem => item.Img)" target="_blank" class="btn btn-sm btn-default @if (item.Img == null || item.Img == " ") {<text>disabled</text>}">
+                                <span class="glyphicon glyphicon-picture"></span> Picture</a>
+                            <a href="@Html.DisplayFor(modelItem => item.ArticleLink)" target="_blank" class="btn btn-sm btn-default  @if (item.ArticleLink == null || item.Img == " ") {<text>disabled</text>}"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> Article</a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
 }
 
-</table>
+  
+</div>
