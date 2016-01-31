@@ -1,15 +1,49 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Debes algo</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <title>@ViewBag.Title - Debes Algo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Debes Algo registra y monitorea el estatus de los establecimientos que han sido embargados por el Departamento de Hacienda del Estado Libre Asociado de Puerto Rico por no pagar el Inpuesto de Ventas y Uso." />
+    <meta property="og:description" content="Debes Algo registra y monitorea el estatus de los establecimientos que han sido embargados por el Departamento de Hacienda del Estado Libre Asociado de Puerto Rico por no pagar el Inpuesto de Ventas y Uso." />
+    <meta name="keywords" content="puerto, rico, pr, hacienda, ivu, tax, embargo, negocios, deuda, establecimientos, impuestos, ventas, uso, departamento" />
+    <meta property="fb:app_id" content="462584923949213">
+    <meta property="og:title" content="Debes Algo" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Debes Algo" />
+    <meta property="og:image" content="http://www.debesalgo.com/Content/logo.png" />
+    <meta property="og:url" content="http://debesalgo.com" />
+    <meta property="section" content="home" />
+    <meta content="http://www.debesalgo.com/Content/DebesAlgoShare.jpg" name="thumbnail">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Debes Algo" />
+    <meta name="twitter:description" content="Debes Algo registra y monitorea el estatus de los establecimientos que han sido embargados por el Departamento de Hacienda del Estado Libre Asociado de Puerto Rico por no pagar el Inpuesto de Ventas y Uso." />
+    <meta name="twitter:image" content="http://www.debesalgo.com/Content/DebesAlgoSquare.jpg" />
     <meta name="google-site-verification" content="ZEZ9UCHR886Nk08_H8hGbp7rRC08DhDi2VwBHYkn5hM" />
 
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    <script>
+        //facebook app
+        window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '462584923949213',
+            xfbml      : true,
+            version    : 'v2.5'
+        });
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
