@@ -1,5 +1,5 @@
 # Debes Algo
-Aplicación para registrar y monitorear el estatus de los establecimientos que han sido embargados por el [Departamento de Hacienda del Estado Libre Asociado de Puerto Rico](http://www.hacienda.gobierno.pr/).
+Aplicación para registrar y monitorear el estatus de los establecimientos que han sido embargados por el [Departamento de Hacienda del Estado Libre Asociado de Puerto Rico](http://www.hacienda.gobierno.pr/)  debido no pagar el Inpuesto de Ventas y Uso.
 
 ## ¿Qué es un embargo?
 Un embargo de bienes muebles e inmuebles es un instrumento para asegurar el cobro de una deuda contributiva, cuando el contribuyente ha incumplido con los términos concedidos para el pago de la misma. 
@@ -19,7 +19,13 @@ DebesAlgo cuenta con los siguientes *features*:
 ¿Te interesa contribuir? ¡Perfecto! Esto es lo que debes saber.
 
 ### Tecnología
-Este repositorio utiliza ASP/.Net MVC5 y el *framework* [KnockoutJS](http://knockoutjs.com/). Puedes utilizar la edición [Visual Studio Community 2015](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx). Instala [Azure SDK](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409) para la base de datos.
+Este repositorio utiliza:
+1. ASP/.Net MVC5, 
+2. [Razor](http://www.asp.net/web-pages/overview/getting-started/introducing-razor-syntax-c), 
+3. [Bootstrap](http://getbootstrap.com/), 
+4. y el *framework* [KnockoutJS](http://knockoutjs.com/). 
+
+Puedes utilizar la edición [Visual Studio Community 2015](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx). Instala [Azure SDK](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409) para la base de datos. Para control de versión utilizamos Git siguiendo el modelo [Git Flow](http://nvie.com/posts/a-successful-git-branching-model/). 
 
 ### Instrucciones para contribuir código
 1. Hacer un *fork* al repositorio.
