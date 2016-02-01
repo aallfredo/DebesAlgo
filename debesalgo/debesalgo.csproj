@@ -174,7 +174,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ClosedBusinessController.cs" />
     <Compile Include="Controllers\ClosedBusinessesAdminController.cs" />
-    <Compile Include="Controllers\ClosedBusinessInReview.cs" />
+    <Compile Include="Controllers\ClosedBusinessInReviewController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MakeMeAdminController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -267,6 +267,7 @@
     <Content Include="Views\ClosedBusinessInReview\Details.cshtml" />
     <Content Include="Views\ClosedBusinessInReview\Edit.cshtml" />
     <Content Include="Views\ClosedBusinessInReview\Index.cshtml" />
+    <Content Include="Views\ClosedBusinessInReview\PassThrough.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

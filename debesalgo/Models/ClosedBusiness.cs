@@ -10,7 +10,8 @@ namespace debesalgo.Models
     public enum Status { Open,Closed,
         Unknown
     }
-    public class ClosedBusiness
+
+    public class ClosedBusinessBase
     {
         [Key]
         public int Id { set; get; }
@@ -22,7 +23,8 @@ namespace debesalgo.Models
 
         private Status _currentStatus;
 
-        public Status CurrentStatus {
+        public Status CurrentStatus
+        {
             set
             {
                 _currentStatus = value;
@@ -41,5 +43,15 @@ namespace debesalgo.Models
 
         public string Img { set; get; }
         public string Details { get; set; }
+    }
+
+
+    public class ClosedBusiness: ClosedBusinessBase
+    {      
+    }
+
+    public class ClosedBusinessInReview: ClosedBusinessBase
+    {
+        public DateTime Updated { get; set; }
     }
 }
