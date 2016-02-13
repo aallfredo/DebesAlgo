@@ -1,8 +1,12 @@
+Master : [![Build Status](https://travis-ci.org/aallfredo/DebesAlgo.svg?branch=master)](https://travis-ci.org/aallfredo/DebesAlgo)
+
+Develop : [![Build Status](https://travis-ci.org/aallfredo/DebesAlgo.svg?branch=develop)](https://travis-ci.org/aallfredo/DebesAlgo)
+
 # Debes Algo
-Aplicación para registrar y monitorear el estatus de los establecimientos que han sido embargados por el [Departamento de Hacienda del Estado Libre Asociado de Puerto Rico](http://www.hacienda.gobierno.pr/)  debido no pagar el Inpuesto de Ventas y Uso.
+Aplicación para registrar y monitorear el estatus de los establecimientos que han sido embargados por el [Departamento de Hacienda del Estado Libre Asociado de Puerto Rico](http://www.hacienda.gobierno.pr/), debido al impago del Impuesto de Ventas y Uso (IVU).
 
 ## ¿Qué es un embargo?
-Un embargo de bienes muebles e inmuebles es un instrumento para asegurar el cobro de una deuda contributiva, cuando el contribuyente ha incumplido con los términos concedidos para el pago de la misma. 
+Un embargo de bienes muebles e inmuebles, es un instrumento para asegurar el cobro de una deuda contributiva, cuando el contribuyente ha incumplido con los términos concedidos para el pago de la misma. 
 
 ## Sobre la aplicación
 Esta aplicación se encuentra en producción en [DebesAlgo.com](http://debesalgo.com) y próximamente será acompañado por un cliente desarrollado en [Cordova](https://cordova.apache.org/).
@@ -11,7 +15,7 @@ Esta aplicación se encuentra en producción en [DebesAlgo.com](http://debesalgo
 DebesAlgo cuenta con los siguientes *features*:
 - Manejo de cuentas por administrador
 - Manejo de data por el administrador
-- Desplegue de información para los usuarios
+- Despliegue de información para los usuarios
 - Lista de establecimientos embargados
 - Diseño de respuesta (*responsive design*)
 
@@ -30,16 +34,16 @@ Puedes utilizar la edición [Visual Studio Community 2015](https://www.visualstu
 ### Instrucciones para contribuir código
 1. Hacer un *fork* al repositorio.
 2. Abrir en Visual Studio y *hackear* el código. :).
-3. Crea un *pull request* para tu contribución y ésta será revisada.
+3. Crea un *pull request* para tu contribución y éste será revisado.
 
 **Nota**: Si crean una copia local, para hacerse admin por primera vez corre:
 
       http://[el nombre de tu host]/MakeMeAdmin/Create?email=[lacuentaconlaqueteregistraste]
 
-Esto solo corre una vez luego de eso es cerrado.
+Esto solo corre una vez, luego de eso es cerrado.
 
-### Colabora reportando *bugs* y ofreciendo recomedaciones
-Somete peticiones de nuevas funciones (*feature requests*) y errores (*bugs*) en la lista de Issues de este repositorio.
+### Colabora reportando *bugs* y ofreciendo recomendaciones
+Somete peticiones para nuevas funciones (*feature requests*) y errores (*bugs*) en la lista de Issues de este repositorio.
 
 ### Sé parte del equipo. Únete a nuestro Slack chat.
 Si deseas unirte a la discusión, ingresa a nuestro *team* en el Slack chat de [PR Developers Slack](http://PRDevelopers.slack.com). Para registrarte y recibir una invitación al grupo, [**solicita aquí**](https://prdevelopers.herokuapp.com/). 
