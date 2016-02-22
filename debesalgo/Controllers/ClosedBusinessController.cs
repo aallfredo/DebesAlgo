@@ -10,6 +10,7 @@ namespace debesalgo.Controllers
     public class ClosedBusinessResponse
     {
         public List<ClosedBusiness> Businesses { set; get; }
+        public Dictionary<string, decimal> SummaryOfDebtPerTowns { get; internal set; }
         public List<string> TownTags { set; get; }
     }
 
@@ -34,12 +35,32 @@ namespace debesalgo.Controllers
             {                
                 listOfItems = allTags.Where(s => s.Name == tag).Select(s => s.TaggedBusiness).ToList();              
             }
+            var debtpertown = CalculateTownsAnAmountOwed(allTags);
             var response = new ClosedBusinessResponse
             {
                 Businesses = listOfItems,
-                TownTags = tags
+                TownTags = tags,
+                SummaryOfDebtPerTowns = debtpertown
             };
             return Json(response, JsonRequestBehavior.AllowGet);
         }
+
+        private Dictionary<string,decimal> CalculateTownsAnAmountOwed(IQueryable<Tag> listOfItems)
+        {
+            Dictionary<string, decimal> returnable = new Dictionary<string, decimal>();
+            foreach (var t in listOfItems)
+            {
+                if (!returnable.ContainsKey(t.Name))
+                {
+                    returnable.Add(t.Name, t.TaggedBusiness.TotalMoneyOwed);
+                }
+                else
+                {
+                    returnable[t.Name]+= t.TaggedBusiness.TotalMoneyOwed;
+                }
+            }
+            return returnable;
+        }
     }
+    
 }

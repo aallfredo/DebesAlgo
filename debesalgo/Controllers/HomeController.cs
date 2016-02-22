@@ -19,12 +19,5 @@ namespace debesalgo.Controllers
 
             return View();
         }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Contact page.";
-
-            return View();
-        }
     }
 }
