@@ -64,6 +64,12 @@
                                 <strong>Detalles: </strong><span data-bind="text: Details"></span>
                             </div>
                         </div>
+                        <div data-bind="visible: TotalMoneyOwed() > 0" class="row">
+                            <div class="col-md-12">
+                                <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+                                <strong>Cantidad Adeudada: </strong><span data-bind="text: TotalMoneyOwed"></span>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-10 enlace">
                                 <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>

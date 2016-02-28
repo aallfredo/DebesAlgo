@@ -43,6 +43,11 @@ namespace debesalgo.Models
 
         public string Img { set; get; }
         public string Details { get; set; }
+
+        public string Owner { get; set; }
+
+        public Decimal TotalMoneyOwed { get; set; }
+
     }
 
 
