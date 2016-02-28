@@ -23,6 +23,13 @@ textarea {
     max-width: 280px;
 }
 
+
+/* search area */
+#filter-by-town {
+    margin-top:1em;
+    position:relative;
+}
+
 /* lista de comercios */
 
 .card{

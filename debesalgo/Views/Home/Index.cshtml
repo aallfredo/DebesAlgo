@@ -2,7 +2,7 @@
     ViewBag.Title = "Lista";
 }
 
-<div class="jumbotron" style="text-align:center">
+<div class="jumbotron text-center">
     <img src="~/Content/logo.png" style="width: 60%;" />
    
     <p class="lead" style="margin-top: 15px;">Lista no oficial de comercios embargados por el <a href="http://www.hacienda.gobierno.pr/" target="_blank">Departamento de Hacienda</a> en Puerto Rico. </p>   
@@ -11,12 +11,6 @@
 
 
 
-<div class="row">
-    <div class="col-md-6 col-md-push-3" style="margin-bottom:5px;text-align:center">
-
-       
-    </div>
-</div>
 
 <div class="row">
 
@@ -79,7 +73,7 @@
 {
                             <div  class="col-md-2 text-right">
                                 <a title="Edit item" data-bind="attr: {href: '/ClosedBusinessInReview/PassThrough/'+Id()}">
-                                    <span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>Edit
+                                    <span class='glyphicon glyphicon-pencil' aria-hidden='true'></span> Edit
                                 </a>
                             </div>
 }
@@ -97,32 +91,29 @@
 
     </div>
     <div class="col-md-3 sidebar-second">
-        <div class="row">
-            <div class="well well-sm">
-                <div id="custom-search-input pull-right">
-                    <div class="input-group">
-                        <input type="text" class=" search-query form-control" placeholder="Search" data-bind="textInput:SearchBox" />
-                        <span class="input-group-btn">
-                            <button class="btn btn-info" type="button" data-bind="click:InvokeSearch">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                    </div>
-                </div>
-                <div>
-                    <ul data-bind="foreach: Data.TownTags" style="list-style-type: none; display:inline;">
-                        <li style="list-style-type: none; display:inline; margin-right:10px;"><a href="#" data-bind="text:$data, click:$root.InvokeTag "></a></li>
-                    </ul>
-                </div>
+        <div id="custom-search-input">
+            <div class="input-group">
+                <input type="text" class="search-query form-control" placeholder="Buscar" data-bind="textInput:SearchBox" />
+                <span class="input-group-btn">
+                    <button class="btn btn-info" type="button" data-bind="click:InvokeSearch">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
             </div>
         </div>
-        <div class="row">
-            
-            <!--Div that will hold the pie chart-->
-            <div id="chart_div"></div>
-            <div id="donut_chart"></div>
-        </div><!-- end of chart row -->
-    </div>
+        <div id="filter-by-town">
+            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Filter por municipio 
+                <span class="caret"></span>
+            </button>
+            <ul data-bind="foreach: Data.TownTags" class="dropdown-menu info">
+                <li class=""><a href="#" data-bind="text:$data, click:$root.InvokeTag "></a></li>
+            </ul>
+        </div>
+        <!--Div that will hold the pie chart-->
+        <div id="chart_div"></div>
+        <div id="donut_chart"></div>
+    </div><!-- end of col-md-3 -->
     
 </div>
 @section scripts{
