@@ -8,7 +8,7 @@
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <h4>Crea una cuenta y te avisaremos cuando hagamos actualizaciones al sistema.</h4>
+    <h4>Crea una cuenta y te diremos cuando tengamos actualizemos el sistema.</h4>
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
@@ -32,11 +32,6 @@
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" class="btn btn-default" value="Crear Cuenta" />
-        </div>
-    </div>
-	<div class="form-group">
-        <div class="col-md-10">
-            <iframe src=”https://docs.google.com/forms/d/1g5znUVYjBrdW4jaiNdt6iTWMoz1uMO5Slklk2928P0s/viewform?embedded=true” width=”100%″ height=”500″ frameborder=”0″ marginheight=”0″ marginwidth=”0″></iframe>
         </div>
     </div>
 }
